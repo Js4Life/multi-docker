@@ -13,7 +13,7 @@ after_success:
   - docker build -t raghu1/multi-client .client
   - docker build -t raghu1/multi-nginx ./nginx
   - docker build -t raghu1/multi-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password=stdin 
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push raghu1/multi-client
   - docker push raghu1/multi-nginx
   - docker push raghu1/worker
